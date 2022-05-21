@@ -8,7 +8,7 @@ body {
 }
 
 main {
-    margin: 175px 25%;
+    margin: 150px 25%;
 }
 
 h1 {
@@ -114,13 +114,13 @@ input:focus {
     line-height: 200%;
 }
 
-footer {
+.footer {
     text-align: center;
     color: #55F991;
     position: absolute;
     width: 50%;
     margin: 0 25%;
-    bottom: 12px;
+    padding-bottom: 20px;
 }
 
 footer a {
@@ -130,10 +130,10 @@ footer a {
 
 @media screen and (max-width:730px) {
     main {
-        margin: 100px 25%;
+        margin: 80px 25%;
     }
     .results span {
-        flex: 80%;
+        flex: 50%;
     }
 }
 
