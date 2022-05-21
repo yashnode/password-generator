@@ -38,7 +38,13 @@ h1 {
     margin: 5px auto;
 }
 
-button {
+
+/* section {
+    display: flex;
+    flex-direction: column;
+} */
+
+#generate {
     margin-top: 40px;
     background-color: #10B981;
     width: 233px;
@@ -51,6 +57,35 @@ button {
     border: none;
     border-radius: 6px;
     cursor: pointer;
+}
+
+button {
+    background-color: #273549;
+    height: 30px;
+    border-radius: 6px;
+    border: none;
+    margin-top: 15px;
+    color: #10B981;
+    margin-right: 30px;
+}
+
+#length {
+    background-color: #1F2937;
+    width: 233px;
+    height: 42px;
+    text-align: center;
+    font-size: 16px;
+    line-height: 24px;
+    color: #FFFFFF;
+    border: none;
+    border-bottom: 1px solid #2F3E53;
+    border-radius: 6px;
+    font-style: italic;
+    margin-left: 40px;
+}
+
+input:focus {
+    outline: none;
 }
 
 .seperator {
@@ -68,7 +103,7 @@ button {
 
 .results span {
     margin: 5px;
-    flex: 40%;
+    flex: 100%;
     background-color: #273549;
     color: #55F991;
     max-width: 210px;
@@ -99,5 +134,18 @@ footer a {
     }
     .results span {
         flex: 80%;
+    }
+}
+
+@media screen and (max-width:1100px) {
+    #length {
+        margin: 10px 0 0 0;
+    }
+}
+
+@media screen and (max-width:1030px) {
+    section {
+        display: flex;
+        flex-direction: column;
     }
 }

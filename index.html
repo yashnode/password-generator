@@ -11,18 +11,25 @@
 
 </head>
 
-<body>
+<body onload="generate()">
     <main>
         <h1 class="top-1">Generate a</h1>
         <h1 class="top-2">random password</h1>
         <h2 class="subtext">Never use an insecure password again.</h2>
-        <button id="generate"><span id="icon">⚡</span>Generate passwords</button>
+        <section>
+            <button id="generate" onclick="generate()"><span id="icon">⚡</span>Generate passwords</button>
+            <input type="text" id="length" placeholder="Enter length" min="4" max="20" maxlength="2" oninput="checkLength(this)">
+        </section>
         <div class="seperator"></div>
         <div class="results">
             <span id="pwd1">>nfJjy!dDvR&ial</span>
+            <button onclick="copy(0)"><i class="fa fa-clipboard"></i></button>
             <span id="pwd2">egxWij@veiPUwK</span>
+            <button onclick="copy(1)"><i class="fa fa-clipboard"></i></button>
             <span id="pwd3">QYY?kiYVLY)LjLi</span>
+            <button onclick="copy(2)"><i class="fa fa-clipboard"></i></button>
             <span id="pwd4">NcR^pIDfUZ?vY+M</span>
+            <button onclick="copy(3)"><i class="fa fa-clipboard"></i></button>
         </div>
     </main>
     <footer>Made by
