@@ -118,8 +118,8 @@ input:focus {
     text-align: center;
     color: #55F991;
     position: absolute;
-    width: 50%;
-    margin: 0 25%;
+    width: 60%;
+    margin: 0 20%;
     padding-bottom: 20px;
 }
 
@@ -133,7 +133,7 @@ footer a {
         margin: 80px 25%;
     }
     .results span {
-        flex: 50%;
+        flex: 80%;
     }
 }
 
@@ -147,5 +147,11 @@ footer a {
     section {
         display: flex;
         flex-direction: column;
+    }
+}
+
+@media screen and (max-width:600px) {
+    button {
+        margin: 0 0 5px 0;
     }
 }
