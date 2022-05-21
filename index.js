@@ -73,10 +73,10 @@ setInputFilter(document.getElementById("length"), function(value) {
 }, "Only digits are allowed!");
 
 function checkLength(elem) {
-    if (elem.value > 18) {
+    if (elem.value > 13) {
         let length = document.getElementById("length")
         length.classList.add("input-error");
-        length.setCustomValidity("Max length of 18 characters is allowed!");
+        length.setCustomValidity("Max length of 13 characters is allowed!");
         length.reportValidity();
         elem.value = '';
     }
