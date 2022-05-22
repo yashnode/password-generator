@@ -35,11 +35,12 @@ function generate() {
     }
 }
 
-function copy(i) {
-    let copyText = Object.values(pwd)[i]
-    navigator.clipboard.writeText(copyText.textContent);
-    alert(copyText.textContent + " Password has been copied to the clipboard! ");
-}
+// function copy(i) {
+//     let copyText = Object.values(pwd)[i]
+//     navigator.clipboard.writeText(copyText.textContent);
+
+//     alert(copyText.textContent + " Password has been copied to the clipboard! ");
+// }
 
 
 function setInputFilter(textbox, inputFilter, errMsg) {
@@ -79,5 +80,33 @@ function checkLength(elem) {
         length.setCustomValidity("Max length of 13 characters is allowed!");
         length.reportValidity();
         elem.value = '';
+    }
+}
+
+function copy(i) {
+    let textToCopy = Object.values(pwd)[i].textContent
+        // navigator clipboard api needs a secure context (https)
+    if (navigator.clipboard && window.isSecureContext) {
+        // navigator clipboard api method'
+        navigator.clipboard.writeText(textToCopy);
+        alert(textToCopy + " has been copied to the clipboard! ");
+
+    } else {
+        // text area method
+        let textArea = document.createElement("textarea");
+        textArea.value = textToCopy;
+        // make the textarea out of viewport
+        textArea.style.position = "fixed";
+        textArea.style.left = "-999999px";
+        textArea.style.top = "-999999px";
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+        alert(textToCopy + " has been copied to the clipboard! ");
+        return new Promise((res, rej) => {
+            // here the magic happens
+            document.execCommand('copy') ? res() : rej();
+            textArea.remove();
+        });
     }
 }
